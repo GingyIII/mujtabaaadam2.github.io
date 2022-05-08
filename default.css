@@ -9,6 +9,10 @@
     --secondaryText:#4b5156;
 
     --themeDotBorder:#24292e;
+
+    --previewBg: rgba(74, 181, 226, 0.5);
+    --previewShadow: #f0ead6;
+
 }
 
 
@@ -212,6 +216,30 @@ h6{font-size: 16px;}
 
 .right-column{
     grid-area: right-column;
+    display: grid;
+    align-content: center;
+
+    padding-top: 50px;
+    padding-bottom: 50x;
+
+}
+
+#preview-shadow{
+    background-color: var(--previewShadow);
+    width: 320px;
+    height: 200px;
+    padding-left: 30px;
+    padding-top: 30px;
+
+}
+
+
+#preview{
+    width: 300px;
+    border: 1.5px solid #b83d17;
+    background-color: var(--previewBg);
+    padding: 15px;
+    position: relative;
 }
 
 
@@ -221,11 +249,60 @@ h6{font-size: 16px;}
     text-align: center;
 }
 
+/* for corner dots in the about me section */
+.corner{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1.5px solid #b83d17;
+    background-color: #ffff;   
+    position: absolute;
+
+}
+
+#tl-corner{
+    top: -4px;
+    left: -4px;
+}
+
+#tr-corner{
+    top: -4px;
+    right: -4px;
+}
+
+#br-corner{
+    bottom: -4px;
+    right: -4px;
+}
+
+#bl-corner{
+    bottom: -4px;
+    left: -4px;
+}
+
+
 /* responsive functionality for mobile */
 @media screen and (max-width: 1200px){
     .main-container{
         width: 95%;
     }
+}
+
+@media screen and (max-width: 800px){
+    .intro-wrapper{
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'nav-wrapper'
+            'left-column'
+            'right-column'
+        ;
+    
+    }
+
+    .right-column{
+        justify-content: center;
+    }
+
 }
 
 
